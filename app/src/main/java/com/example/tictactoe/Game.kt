@@ -189,6 +189,7 @@ class Game : AppCompatActivity(), View.OnClickListener {
         outState.putInt("currentButton", currentButton)
     }
 
+    // Переопределение нажатия кнопки навигации «назад»
     override fun onBackPressed() {
         if (roundCount == 0 && player1Score == 0 && player2Score == 0) {
             super.onBackPressed()
@@ -326,7 +327,7 @@ class Game : AppCompatActivity(), View.OnClickListener {
         roundCount = 0
         playerTurn = true
         turn.text = "TURN: X"
-        currentButton = 0
+        currentButton = -1
         undo.visibility = View.INVISIBLE
     }
 }
